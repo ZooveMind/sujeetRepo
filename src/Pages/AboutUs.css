@@ -1,0 +1,22 @@
+.AboutUs{
+    //position: relative;
+    //height: 100vh;
+    //width: 100vw;
+    background-color: rgb(234 234 234);
+}
+.abtContainer{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding-top: 8%;
+}
+.abt-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color:#213547;
+}
+.abt-img{
+    height:93%;
+    border-radius: 15px;
+}

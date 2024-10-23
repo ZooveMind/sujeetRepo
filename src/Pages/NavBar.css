@@ -1,0 +1,39 @@
+.header {
+    align-items: center;
+    display: flex;
+    padding-left: 15px;
+    //position:sticky;
+    top: 0;
+    z-index:2;
+  }
+
+  .header p{
+    font-size: 2rem;
+    font-style: italic;
+    font-family: cursive;
+    font-weight: 600;
+    //color: aliceblue;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, violet);
+      -webkit-background-clip: text;
+      color: transparent;
+  }
+  
+  .header ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 25%;
+  }
+  
+  .header ul li {
+    display: inline;
+    margin: 0 15px;
+    
+  }
+  .header ul li a{
+    color:#aeaeae;
+    font-style: italic;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  

@@ -1,0 +1,59 @@
+.footerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f1f1f1; /* Light gray background */
+  padding: 20px 50px; /* Adjust for space */
+}
+
+.footerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.footerLeft h2 {
+  font-size: 1.7em;
+  margin-right: 40px;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 15px;
+}
+
+.socialIcons a {
+    text-decoration: none;
+    color: #fff; /* White icon color */
+    font-size: 1.5em;
+    background-color: #000; /* Black background */
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px; /* Set width for the icon container */
+    height: 20px; /* Set height for the icon container */
+  }
+  
+  .socialIcons a:hover {
+    background-color: #555; /* Lighter black background on hover */
+    transition: background-color 0.3s ease;
+  }
+  
+
+.footerRight {
+  display: flex;
+  gap: 30px;
+}
+
+.footerRight a {
+  text-decoration: none;
+  color: #000; /* Dark color for links */
+  font-size: 1.4em;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.footerRight a:hover {
+  color: #555; /* Hover effect for links */
+}

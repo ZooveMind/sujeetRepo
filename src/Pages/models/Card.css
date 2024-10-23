@@ -1,0 +1,30 @@
+.serviceCard {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.serviceCard:hover {
+    transform: translateY(-10px);
+}
+
+.serviceIcon {
+    width: 65px;
+    height: 60px;
+    border-radius: 20px;
+}
+
+.serviceCard h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color:#213547;
+}
+
+.serviceCard p {
+    font-size: 1em;
+    color: #666;
+}
