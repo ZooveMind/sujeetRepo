@@ -1,22 +1,35 @@
 .AboutUs{
-    //position: relative;
-    //height: 100vh;
-    //width: 100vw;
-    background-color: rgb(234 234 234);
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-color:  rgb(0 23 15);
 }
 .abtContainer{
     display: flex;
     width: 80%;
     margin: auto;
-    padding-top: 8%;
+    padding-top: 4%;
+    height:90%
 }
 .abt-text{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color:#213547;
+    width:50%;
+}
+.abt-text h1{
+    color:white;
+}
+.abt-text h2{
+    color:#c2c2c2;
+}
+.imgDiv{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .abt-img{
-    height:93%;
+    height:85%;
     border-radius: 15px;
 }

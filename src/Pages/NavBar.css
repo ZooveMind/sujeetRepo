@@ -1,7 +1,7 @@
 .header {
     align-items: center;
     display: flex;
-    padding-left: 15px;
+    padding-left: 10px;
     //position:sticky;
     top: 0;
     z-index:2;
@@ -9,19 +9,19 @@
 
   .header p{
     font-size: 2rem;
-    font-style: italic;
-    font-family: cursive;
     font-weight: 600;
+    color: blue;
+  //  font-style: italic;
+    //font-family: cursive;
     //color: aliceblue;
-    background: linear-gradient(45deg, red, orange, yellow, green, blue, violet);
-      -webkit-background-clip: text;
-      color: transparent;
+   // background: linear-gradient(45deg, red, orange, yellow, green, blue, violet);
+    //  -webkit-background-clip: text;
   }
   
   .header ul {
     list-style: none;
     padding: 0;
-    margin-left: 25%;
+    margin-left: 20%;
   }
   
   .header ul li {
@@ -37,3 +37,7 @@
     font-weight: 600;
   }
   
+  .navLogo{
+    width: 150px;
+    padding-top: 10px;
+  }

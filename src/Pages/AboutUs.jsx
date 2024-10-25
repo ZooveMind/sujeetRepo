@@ -9,7 +9,7 @@ const AboutUs = () => {
                     <h1>AI-Driven Research Solutions for Earth and Space</h1>
                     <h2>Revolutionize Earth and Space Exploration with AI-Driven Hybrid Systems Based on Neuromorphic Engineering</h2>
                 </div>
-                <div>
+                <div className='imgDiv'>
                     <img src={image} alt="image" className='abt-img' />
                 </div>
             </div>

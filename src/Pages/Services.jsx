@@ -29,7 +29,7 @@ const Services = () => {
             <div className='serviceBlackDrop'></div>
             <div className='seriviesContentContainer'>
                 <div className='servicesHeading'>
-                    <h1>Our Services</h1>
+                    <h1>Our Products</h1>
                     <h3>Innovative Hybrid Systems for Earth and Space Research Using Neuromorphic Engineering and AI</h3>
                 </div>
                 <div className='ServicesContent'>
