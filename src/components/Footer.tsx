@@ -1,5 +1,5 @@
 import React from 'react';
-import { Orbit, Twitter, Linkedin, Github } from 'lucide-react';
+import { Orbit, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -41,14 +41,14 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="#" className="text-gray-400 hover:text-white" target='_blank'>
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
+              <a href="https://www.linkedin.com/company/zoove-space/about/" className="text-gray-400 hover:text-white" target='_blank'>
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Github className="w-5 h-5" />
+              <a href="https://www.instagram.com/zoove.space/" className="text-gray-400 hover:text-white" target='_blank'>
+                <Instagram className="w-5 h-5" />
               </a>
             </div>
           </div>

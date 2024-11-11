@@ -5,10 +5,10 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white scroll-smooth overflow-x-hidden">
       <Navbar />
       
-      {/* Hero Section */}
+      {/* Home Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img 
@@ -31,8 +31,8 @@ function App() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gradient-to-b from-black to-gray-900">
+      {/* Technology Section */}
+      <section className="py-20 bg-gradient-to-b from-black to-gray-900" id='technology'>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">Revolutionary Technology</h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -64,7 +64,7 @@ function App() {
       </section>
 
       {/* Applications Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+      <section className="py-20 bg-gradient-to-b from-gray-900 to-black" id='application'>
         <div className="max-w-6xl mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16">Applications</h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -104,8 +104,8 @@ function App() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 relative">
+      {/* About Section */}
+      <section className="py-20 relative" id='about'>
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80"
@@ -120,7 +120,9 @@ function App() {
             Join us in shaping the future of space technology with our revolutionary imaging solutions.
           </p>
           <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=questions@zoove.space" target="_blank">
             Contact Our Team
+            </a>
           </button>
         </div>
       </section>

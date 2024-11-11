@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Menu, X, Orbit } from 'lucide-react';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-md">
+    <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-md ">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-2">
@@ -17,12 +17,14 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Technology</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Applications</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">About</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a>
+            <a href="#technology" className="text-gray-300 hover:text-white transition-colors">Technology</a>
+            <a href="#application" className="text-gray-300 hover:text-white transition-colors">Applications</a>
+            <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
+            {/* <a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a> */}
             <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white transition-colors">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=questions@zoove.space" target="_blank">
               Contact Us
+              </a>
             </button>
           </div>
 
