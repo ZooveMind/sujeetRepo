@@ -41,9 +41,9 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Connect</h3>
             <div className="flex gap-4">
-              <a href="#" className="text-gray-400 hover:text-white" target='_blank'>
+              {/* <a href="#" className="text-gray-400 hover:text-white" target='_blank'>
                 <Twitter className="w-5 h-5" />
-              </a>
+              </a> */}
               <a href="https://www.linkedin.com/company/zoove-space/about/" className="text-gray-400 hover:text-white" target='_blank'>
                 <Linkedin className="w-5 h-5" />
               </a>
