@@ -1,5 +1,6 @@
 import React from 'react';
 import { Orbit, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
+import logo from '../assets/ZooveLogoMain.png'
 
 const Footer = () => {
   return (
@@ -8,10 +9,11 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Orbit className="w-6 h-6 text-blue-500" />
+              {/* <Orbit className="w-6 h-6 text-blue-500" />
               <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
                 Zoove
-              </span>
+              </span> */}
+              <img className='max-w-24' src={logo} alt="logo" />
             </div>
             <p className="text-gray-400 text-sm">
               Pioneering the future of space imaging with neuromorphic technology.
