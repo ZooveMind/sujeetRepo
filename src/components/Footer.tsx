@@ -1,5 +1,6 @@
 import React from 'react';
 import { Orbit, Twitter, Linkedin, Github, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/ZooveLogoMain.png'
 
 const Footer = () => {
@@ -25,7 +26,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white text-sm">About</a></li>
               <li><a href="#" className="text-gray-400 hover:text-white text-sm">Careers</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white text-sm">Press</a></li>
+              <li><Link to="/blog" target='_blank' className="text-gray-400 hover:text-white text-sm">Press</Link></li>
               <li><a href="#" className="text-gray-400 hover:text-white text-sm">Contact</a></li>
             </ul>
           </div>
