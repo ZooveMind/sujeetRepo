@@ -1,10 +1,17 @@
 import { useState } from 'react';
 import { Menu, X, Orbit } from 'lucide-react';
-import logo from '../assets/ZooveLogoMain.png'
-import logo2 from '../assets/circular.jpg'
+//import logo from '../assets/ZooveLogoMain.png'
+import { Link } from 'react-router-dom';
+//import logo from '../assets/circular.jpg'
+import logo from '../assets/zooveLogo.jpeg'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [productsVisible, setProductsVisible] = useState(false);
+
+  const toggleProductVisible = ()=>{
+    setProductsVisible(!productsVisible);
+  }
 
   return (
     <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-md ">
@@ -16,13 +23,21 @@ const Navbar = () => {
               Zoove
             </span>  */}
             <div>
-              <img className='max-w-20 rounded-full' src={logo2} alt="logo" />
+              <img className='max-w-20 rounded-full' src={logo} alt="logo" />
             </div>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#technology" className="text-gray-300 hover:text-white transition-colors">Technology</a>
+            <a href="#" className="text-gray-300 hover:text-white transition-colors" onClick={toggleProductVisible}>
+              Products
+              {productsVisible &&
+                <div className="flex flex-col absolute bg-gray-900 text-white rounded-lg shadow-lg p-1 mt-1 right-[27%]">
+                  <Link to="/hardware" className="p-2 hover:text-purple-400">Hardware</Link>
+                  <Link to="/software" className="p-2 hover:text-purple-400">Software</Link>
+              </div>
+              }
+            </a>
             <a href="#application" className="text-gray-300 hover:text-white transition-colors">Applications</a>
             <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
             {/* <a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a> */}
