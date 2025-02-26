@@ -5,8 +5,7 @@ import Footer from './Footer';
 function Home(){
     return(
         <div className="min-h-screen bg-black text-white scroll-smooth overflow-x-hidden">
-        <Navbar />
-        
+        <Navbar />    
         {/* Home Section */}
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0">

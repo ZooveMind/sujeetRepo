@@ -1,35 +1,31 @@
-//import react from "React";
-import BlogCard from "./BlogCard";
+import { useState } from "react";
+import BlogLogin from "./BlogAuth/BlogLogin";
+import BlogSignup from "./BlogAuth/BlogSignup";
+import BlogHome from "./BlogHome";
+
+
 function Blog(){
+    const [isVerified,setIsVrified] = useState(false);
+    const [exist, isExist] = useState(true);
+    const toggleVerify = (flag:boolean)=>{
+        console.log("yess it came 4")
+        setIsVrified(flag);
+    }
+    const toggleLogin=()=>{
+        isExist(!exist);
+    }
     return(
-        <main className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
-        <div className="max-w-6xl mx-auto px-4 py-32">
-        <div className="relative mb-16">
-            <div className="absolute inset-0 blur-3xl bg-gradient-to-r from-purple-500/30 via-pink-500/30 to-red-500/30 -z-10"></div>
-            <h1 className="text-7xl font-bold mb-4 text-center bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-transparent bg-clip-text animate-gradient">
-            Tech Explorer
-            </h1>
-            <p className="text-2xl text-center text-gray-400">
-                Explore The World Of Modern Neuromorphic Space Imaging
-            </p>
+        <div>
+            {isVerified?<BlogHome/>:
+                (
+                    <div style={{display:"flex",flexDirection:"column",width:"40%",backgroundColor:"#dcdcdc",alignItems:"center",margin:"auto",top:"20px",position:"relative"}}>
+                        <button onClick={toggleLogin} style={{color:"purple",textDecoration:"underline",fontSize:"large",fontWeight:"500",margin:"10px"}}>
+                            {exist?"SignUp":"Login"}</button>
+                        {exist?<BlogLogin validateUser = {toggleVerify} />:<BlogSignup/>}
+                    </div>
+                ) 
+            }
         </div>
-
-{/* 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {posts.map(post => (
-            <div data-post-category={post.data.category}>
-                <BlogCard
-                title={post.data.title}
-                description={post.data.description}
-                category={post.data.category}
-                url={`/blog/${post.slug}`}
-                />
-            </div>
-            ))}
-        </div> */}
-
-        </div>
-    </main>
     )
 }
 
