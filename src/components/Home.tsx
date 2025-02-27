@@ -23,7 +23,6 @@ function Home(){
             <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Advanced neuromorphic-based hybrid imaging systems for next-generation Earth & Space applications
             </p>
-            <p className="text-base md:text-base text-[rgb(148,148,148)] mb-4">website under development</p>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all flex items-center gap-2 mx-auto">
               Explore Our Technology <ChevronRight className="w-5 h-5" />
             </button>

@@ -18,10 +18,6 @@ const Navbar = () => {
       <div  className="max-w-87rem mx-auto px-4">
         <div className="flex justify-between items-center h-24">
           <div className="flex items-center gap-2">
-            {/* <Orbit className="w-8 h-8 text-blue-500" />
-             <span className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-              Zoove
-            </span>  */}
             <div>
               <img className='max-w-20 rounded-full' src={logo} alt="logo" />
             </div>
@@ -33,7 +29,7 @@ const Navbar = () => {
               Products
               {productsVisible &&
                 <div className="flex flex-col absolute bg-gray-900 text-white rounded-lg shadow-lg p-1 mt-1 right-[27%]">
-                  <Link to="/hardware" className="p-2 hover:text-purple-400">Hardware</Link>
+                  <Link to="/" className="p-2 hover:text-purple-400">Hardware</Link>
                   <Link to="/software" className="p-2 hover:text-purple-400">Software</Link>
               </div>
               }
@@ -61,8 +57,14 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden py-4">
             <div className="flex flex-col gap-4">
-              <a href="#" className="text-gray-300 hover:text-white transition-colors px-4 py-2">
-                Technology
+              <a href="#" className="text-gray-300 hover:text-white transition-colors px-4 py-2" onClick={toggleProductVisible}>
+                Products
+                {productsVisible &&
+                  <div className="flex flex-col bg-gray-900 text-white rounded-lg shadow-lg p-1 mt-1 w-max">
+                    <Link to="/" className="p-2 hover:text-purple-400">Hardware</Link>
+                    <Link to="/software" className="p-2 hover:text-purple-400">Software</Link>
+                </div>
+                }
               </a>
               <a href="#" className="text-gray-300 hover:text-white transition-colors px-4 py-2">
                 Applications
