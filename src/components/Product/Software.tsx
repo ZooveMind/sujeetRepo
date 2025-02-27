@@ -1,7 +1,7 @@
-import Navbar from '../Navbar'
 import { useState } from "react";
 import SoftwareResult from './SoftwareDisplayHandler/SoftwareResult';
 import FileUploadHandler from './SoftwareDisplayHandler/FileUploadHandler';
+import logo from '../../assets/zooveLogo.jpeg'
 
 interface IResult {
   variable?: string;  
@@ -18,7 +18,22 @@ const Software = () => {
 
   return (
     <div className="relative w-full min-h-screen flex flex-col bg-black text-white scroll-smooth overflow-x-hidden ">
-        <Navbar />  
+      <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-md ">
+        <div  className="max-w-87rem mx-auto px-4">
+          <div className="flex justify-between items-center h-24">
+            <div className="flex items-center gap-2">
+              <img className='max-w-20 rounded-full' src={logo} alt="logo" />
+            </div>
+              <div className="md:flex items-center gap-8">
+                <a href="/software" className="text-gray-300 hover:text-white transition-colors">Mat Visualizer</a>
+                <a href="/software" className="text-gray-300 hover:text-white transition-colors">Other softwares</a>
+                <a href="/" className="text-gray-300 hover:text-white transition-colors">Home</a>
+              </div>
+          </div>
+          </div>
+        </nav>
+
+
         <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-4">
           {!results ? 
             <FileUploadHandler fillData={handleResult} />
