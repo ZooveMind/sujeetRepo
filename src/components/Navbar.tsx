@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Orbit } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 //import logo from '../assets/ZooveLogoMain.png'
 import { Link } from 'react-router-dom';
 //import logo from '../assets/circular.jpg'
