@@ -1,22 +1,37 @@
 import { useState } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../redux/store";
+import { useNavigate } from "react-router-dom";
 
 interface FileUploadHandlerProps{
     fillData:Function
 }
 
 const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
+    const user = useSelector((state: RootState) => state.auth.user);
+    const navigate = useNavigate();
+
     const [fileName, setFileName] = useState("No file chosen");
     const [selectedFile, setSelectedFile] = useState(null);
     const [selectedMode, setSelectedMode] = useState('0'); // default to '0'Ebssa, '1'Generic
-    
+    const [fileSize, setFileSize] = useState(0);    
     const [uploading, setUploading] = useState(false);
     const [error, setError] = useState('');
-    
+
+
+  useEffect(() => {
+    if (!user) {
+      alert("Please login to avail our service!!");
+      navigate("/signIn");
+    }
+  }, [user, navigate]);   
     //file upload and name retrival
     const handleFileChange = (event:any) => {
         setSelectedFile(event.target.files[0]);
         const file = event.target.files[0];
-        if (file) {
+        if(file) {
+          setFileSize(file.size);
           if(file.name.length >10){
             let extPos = file.name.lastIndexOf('.');
             let ext = file.name.substring(extPos);  
@@ -30,29 +45,40 @@ const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
         }
         setError('');
     };
-    
-    //for mode of operation
+
     const handleModeChange = (e:any) => {
         setSelectedMode(e.target.value);
     };
     
     const handleUpload = async () => {
+        if(user?.name == ""){
+          alert("please sign In !!");
+          navigate("/signIn")
+        }
         if(!selectedFile) {
-          alert("Please select a file first");
+          alert("Please select a valid file");
           return;
+        }
+        if(fileSize == 0){
+          alert("please select a non empty file")
         }
         setUploading(true);
         setError('');
         fillData(null);
-        //const newWindow = window.open();
+
+        
         // Prepare form data
         const formData = new FormData();
         formData.append('file', selectedFile);
         formData.append('mode', selectedMode);
+        if(user?.name){
+          formData.append('userName', user.name);
+        }
+        formData.append('fileSize', fileSize.toString());
     
         try {
-          let link = "https://mat-visualizer.onrender.com/upload"
-          //let link = "http://192.168.1.13:5000/upload" 
+          //let link = "https://mat-visualizer.onrender.com/upload"
+          let link = "http://192.168.1.13:5000/upload" 
           const response = await fetch(link, {
             method: 'POST',
             body: formData,

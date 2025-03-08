@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-//import logo from '../assets/ZooveLogoMain.png'
 import { Link } from 'react-router-dom';
-//import logo from '../assets/circular.jpg'
 import logo from '../assets/zooveLogo.jpeg'
 
+import { useSelector } from "react-redux";
+import { RootState } from "../redux/store";
+import UserAvatar from './login/UserAvatar';
+
 const Navbar = () => {
+  const user = useSelector((state: RootState) => state.auth.user);
   const [isOpen, setIsOpen] = useState(false);
   const [productsVisible, setProductsVisible] = useState(false);
-
   const toggleProductVisible = ()=>{
     setProductsVisible(!productsVisible);
   }
@@ -25,23 +27,26 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors" onClick={toggleProductVisible}>
-              Products
+            <div  className="cursor-pointer relative" onClick={toggleProductVisible}>
+              <span className='text-gray-300 hover:text-white transition-colors' >Products</span>
               {productsVisible &&
-                <div className="flex flex-col absolute bg-gray-900 text-white rounded-lg shadow-lg p-1 mt-1 right-[27%]">
-                  <Link to="/" className="p-2 hover:text-purple-400">Hardware</Link>
-                  <Link to="/software" className="p-2 hover:text-purple-400">Software</Link>
-              </div>
+                <div className=" bg-gray-900 text-white rounded-lg shadow-lg p-1 mt-2 absolute">
+                  <Link to="/" className="block p-2 hover:text-purple-400">Hardware</Link>
+                  <Link to="/software" className="block p-2 hover:text-purple-400">Software</Link>
+                </div>
               }
-            </a>
+            </div>
             <a href="#application" className="text-gray-300 hover:text-white transition-colors">Applications</a>
             <a href="#about" className="text-gray-300 hover:text-white transition-colors">About</a>
-            {/* <a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a> */}
-            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white transition-colors">
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=questions@zoove.space" target="_blank">
-              Contact Us
-              </a>
-            </button>
+            {user?
+              <UserAvatar name={user.name} />
+              :
+              <Link to='/signIn'>
+                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white transition-colors">
+                  Sign In
+                </button>
+              </Link>
+            }
           </div>
 
           {/* Mobile Menu Button */}
@@ -56,7 +61,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden py-4">
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               <a href="#" className="text-gray-300 hover:text-white transition-colors px-4 py-2" onClick={toggleProductVisible}>
                 Products
                 {productsVisible &&
@@ -72,12 +77,17 @@ const Navbar = () => {
               <a href="#" className="text-gray-300 hover:text-white transition-colors px-4 py-2">
                 About
               </a>
-              <a href="#" className="text-gray-300 hover:text-white transition-colors px-4 py-2">
-                Careers
-              </a>
-              <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white transition-colors mx-4">
-                Contact Us
-              </button>
+              {user?
+              <div className='ml-3'>
+                <UserAvatar name={user.name}/>
+              </div>
+              :
+              <Link to='/signIn'>
+                <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white transition-colors">
+                  Sign In
+                </button>
+              </Link>
+            }
             </div>
           </div>
         )}
@@ -87,3 +97,10 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+            {/* <a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a> */}
+            {/* <button className="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-white transition-colors">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=questions@zoove.space" target="_blank">
+              Contact Us
+              </a>
+            </button> */}
