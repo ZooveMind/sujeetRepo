@@ -77,8 +77,8 @@ const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
         formData.append('fileSize', fileSize.toString());
     
         try {
-          //let link = "https://mat-visualizer.onrender.com/upload"
-          let link = "http://192.168.1.13:5000/upload" 
+          let link = "https://mat-visualizer.onrender.com/upload"
+          //let link = "http://192.168.1.13:5000/upload" 
           const response = await fetch(link, {
             method: 'POST',
             body: formData,
