@@ -100,7 +100,7 @@ const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
         }
     };
     return(
-        <div className="bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-md text-center">
+        <div className="bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-max text-center">
         <h2 className="text-lg font-semibold mb-4">Upload H5 or Mat File</h2>
         <input
         type="file"
@@ -109,7 +109,7 @@ const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
         onChange={handleFileChange}
         className="hidden"
         />
-        <div className="flex items-center justify-around space-x-2">
+        <div className="flex items-center justify-center flex-col md:flex-row md:justify-around space-x-2 gap-4">
           <div>
             <label
                 htmlFor="file-input"
@@ -118,13 +118,13 @@ const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
             </label>
             <span className="text-gray-400 text-xs md:text-sm ml-2">{fileName}</span>
           </div>
-          <select name="" id="" className='bg-black  p-2 rounded-lg cursor-pointer text-sm md:text-lg' onChange={handleModeChange}>
+          <select name="" id="" className='bg-black p-2 rounded-lg cursor-pointer text-sm md:text-lg self-start' onChange={handleModeChange}>
             <option value="0">EBSSA</option>
             <option value="1">GENERIC</option>
           </select>
         </div>
         {error && <p className="text-red-500">{error}</p>}
-        <button className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white py-2 rounded-lg transition-all" onClick={handleUpload}>
+        <button className="mt-4 w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg transition-all" onClick={handleUpload}>
           {uploading ? 'Uploading...' : 'Upload'}
         </button>
     </div>
