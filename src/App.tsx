@@ -5,7 +5,6 @@ import Software from './components/Product/Software';
 import SignInSignUp from './components/login/SigninSignup';
 
 function App() {
-  //console.log('All ENV Variables:', import.meta.env);
   return (
     <Router>
       <Routes>

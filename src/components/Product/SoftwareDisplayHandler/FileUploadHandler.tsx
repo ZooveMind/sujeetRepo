@@ -113,12 +113,12 @@ const FileUploadHandler:React.FC<FileUploadHandlerProps> = ({fillData}) =>{
           <div>
             <label
                 htmlFor="file-input"
-                className="cursor-pointer bg-black hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all">
+                className="text-sm md:text-lg cursor-pointer bg-black hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all">
                 Choose File
             </label>
-            <span className="text-gray-400 text-sm ml-2">{fileName}</span>
+            <span className="text-gray-400 text-xs md:text-sm ml-2">{fileName}</span>
           </div>
-          <select name="" id="" className='bg-black  p-2 rounded-lg cursor-pointer' onChange={handleModeChange}>
+          <select name="" id="" className='bg-black  p-2 rounded-lg cursor-pointer text-sm md:text-lg' onChange={handleModeChange}>
             <option value="0">EBSSA</option>
             <option value="1">GENERIC</option>
           </select>
